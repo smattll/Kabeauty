@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff3f5">
+  <title>For My Love Kabeauty ❤️</title>
+  <style>
+    :root {
+      --rose: #c94f75;
+      --deep: #642b43;
+      --pink: #fff0f3;
+      --cream: #fffaf6;
+      --gold: #d6a85f;
+      --ink: #432c36;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      background:
+        linear-gradient(rgba(255,247,245,.86), rgba(255,240,244,.86)),
+        url('rusina-1.jpg') center center / cover fixed;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button { font: inherit; cursor: pointer; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,250,244,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #f2dce2;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 13px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      color: var(--deep);
+      font-weight: bold;
+    }
+
+    .nav a {
+      color: var(--deep);
+      text-decoration: none;
+      font: 600 .88rem Arial, sans-serif;
+      margin-left: 16px;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      place-items: center;
+      padding: 70px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:before, .hero:after {
+      content: "♡";
+      position: absolute;
+      color: #e8a7b8;
+      opacity: .35;
+      font-size: 9rem;
+    }
+
+    .hero:before {
+      left: 4%;
+      top: 12%;
+      transform: rotate(-18deg);
+    }
+
+    .hero:after {
+      right: 5%;
+      bottom: 8%;
+      font-size: 12rem;
+    }
+
+    .hero-card {
+      max-width: 760px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font: 700 .72rem Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 9vw, 6.6rem);
+      line-height: .98;
+      margin: 18px 0;
+      color: var(--deep);
+      font-weight: 500;
+    }
+
+    .script {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 20px auto;
+    }
+
+    .hero-photo {
+      width: min(260px, 68vw);
+      height: 320px;
+      object-fit: cover;
+      object-position: center 30%;
+      border: 10px solid white;
+      border-radius: 160px 160px 24px 24px;
+      box-shadow: 0 18px 50px #8d435329;
+      margin: 20px auto 10px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 24px;
+      background: var(--rose);
+      color: white;
+      box-shadow: 0 8px 22px #c94f7533;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--deep);
+    }
+
+    section {
+      padding: 76px 20px;
+    }
+
+    .wrap {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 500;
+      color: var(--deep);
+      margin: 10px 0;
+    }
+
+    .section-head p {
+      font: 1rem/1.7 Arial, sans-serif;
+      color: #765b66;
+    }
+
+    .count-section {
+      background: var(--deep);
+      color: white;
+      text-align: center;
+    }
+
+    .count-section h2 { color: #fff; }
+    .count-section .eyebrow { color: #f5c8d4; }
+
+    .count-grid {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+
+    .time {
+      min-width: 105px;
+      padding: 20px 14px;
+      background: #ffffff16;
+      border: 1px solid #ffffff35;
+      border-radius: 18px;
+    }
+
+    .time strong {
+      display: block;
+      font: 700 2.3rem Arial, sans-serif;
+    }
+
+    .time span {
+      font: .75rem Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #f8dce4;
+    }
+
+    #count-note {
+      font: 1rem/1.6 Arial, sans-serif;
+      color: #f8dce4;
+    }
+
+    .love-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .love-item {
+      background: #fff;
+      border: 1px solid #f3dce3;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 25px #71354a0b;
+    }
+
+    .love-item .num {
+      color: var(--rose);
+      font: 700 .8rem Arial, sans-serif;
+      letter-spacing: .15em;
+    }
+
+    .love-item h3 {
+      color: var(--deep);
+      font-size: 1.2rem;
+      margin: 8px 0;
+    }
+
+    .love-item p {
+      font: .95rem/1.6 Arial, sans-serif;
+      color: #5e4851;
+      margin: 0;
+    }
+
+    .timeline {
+      max-width: 720px;
+      margin: auto;
+      position: relative;
+    }
+
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 17px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: #e8b3c2;
+    }
+
+    .moment {
+      position: relative;
+      padding: 0 0 28px 58px;
+    }
+
+    .moment:before {
+      content: "♥";
+      position: absolute;
+      left: 5px;
+      top: 0;
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      background: var(--rose);
+      color: white;
+      border-radius: 50%;
+      font-size: .8rem;
+    }
+
+    .moment-card {
+      background: white;
+      border: 1px solid #f2dce2;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .moment-card h3 {
+      margin: 0 0 8px;
+      color: var(--deep);
+    }
+
+    .moment-card p {
+      margin: 0;
+      font: .95rem/1.6 Arial, sans-serif;
+      color: #5d4852;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px #71354a18;
+      transition: transform .2s ease;
+    }
+
+    .gallery img:hover {
+      transform: translateY(-4px);
+    }
+
+    .letter {
+      max-width: 760px;
+      margin: auto;
+      background: #fff;
+      border: 1px solid #f0d9e0;
+      border-radius: 24px;
+      padding: clamp(24px, 5vw, 48px);
+      box-shadow: 0 16px 40px #71354a10;
+      text-align: center;
+    }
+
+    .letter p {
+      font-size: 1.12rem;
+      line-height: 1.9;
+    }
+
+    .signature {
+      font-style: italic;
+      color: var(--rose);
+      font-size: 1.5rem;
+    }
+
+    .surprise {
+      background: linear-gradient(135deg, #f9dce5, #fff4e8);
+      text-align: center;
+    }
+
+    .surprise-box {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .surprise-message {
+      display: none;
+      margin: 28px auto 0;
+      padding: 28px;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px #71354a16;
+      font-size: 1.25rem;
+      line-height: 1.8;
+    }
+
+    .surprise-message.show {
+      display: block;
+      animation: pop .65s ease;
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(.96);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .music-panel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      font: .9rem Arial, sans-serif;
+    }
+
+    .music-panel label {
+      background: white;
+      border: 1px solid #e9c7d2;
+      padding: 11px 16px;
+      border-radius: 999px;
+      color: var(--deep);
+      cursor: pointer;
+    }
+
+    #music-file { display: none; }
+    #music-status { color: #765b66; }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #8a6472;
+      font: .85rem Arial, sans-serif;
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 20;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -30px;
+      animation: float 4s linear forwards;
+      color: #d84f7b;
+    }
+
+    @keyframes float {
+      to {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .love-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery img { height: 250px; }
+      .gallery img:last-child { grid-column: 1 / -1; height: 300px; }
+      .music-panel { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  
+<div class="music-play" style="text-align:center;padding:18px;background:#fff0f3;">
+  <audio id="backgroundmusic" loop preload="auto">
+    <source src="./our%20song.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
+  </audio>
+  <button class="btn" id="music-toggle" type="button">❤️ Tap here to play our song ❤️</button>
+  <p id="music-status">A special song, just for you.</p>
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">For My Love ♡</div>
+      <div class="nav-links">
+        <a href="#love">Reasons</a>
+        <a href="#journey">Our story</a>
+        <a href="#memories">Memories</a>
+        <a href="#surprise">Surprise</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-card">
+      <div class="eyebrow">A little corner of the internet, made just for you</div>
+      <img class="hero-photo" src="rusina-2.jpg" alt="my favorite pictures">
+      <h1>Happy Birthday,<br><span class="script">My Love</span></h1>
+      <p>Today is all about celebrating the beautiful person you are. I made this little website to remind you how loved, appreciated, and special you are to me. ❤️</p>
+      <a class="btn" href="#love" style="display:inline-block;text-decoration:none">
+        Open your birthday surprise from your loving person smattll↓
+      </a>
+    </div>
+  </header>
+
+  <section class="count-section" id="countdown">
+    <div class="wrap">
+      <div class="eyebrow">A day worth celebrating</div>
+      <h2>Counting down to your day</h2>
+      <div class="count-grid">
+        <div class="time"><strong id="days">--</strong><span>Days</span></div>
+        <div class="time"><strong id="hours">--</strong><span>Hours</span></div>
+        <div class="time"><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div class="time"><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+      <p id="count-note">Your special day is on 4 November 2026.</p>
+    </div>
+  </section>
+
+  <section id="love">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">If I had to list them all…</div>
+        <h2>10 things I love about you</h2>
+        <p>Ten little reasons — and a million more that words cannot fit.</p>
+      </div>
+
+      <div class="love-grid">
+        <article class="love-item"><div class="num">01 / YOUR HEART</div><h3>Your beautiful heart</h3><p>The kindness and care you show make the world feel softer.</p></article>
+        <article class="love-item"><div class="num">02 / YOUR SMILE</div><h3>Your smile</h3><p>It has a way of making an ordinary day feel special.</p></article>
+        <article class="love-item"><div class="num">03 / YOUR LAUGHTER</div><h3>Your laughter</h3><p>It is one of my favourite sounds, and I hope I hear it often.</p></article>
+        <article class="love-item"><div class="num">04 / YOUR STRENGTH</div><h3>Your strength</h3><p>I admire the way you keep going and keep becoming yourself.</p></article>
+        <article class="love-item"><div class="num">05 / YOUR BEAUTY</div><h3>Your beauty</h3><p>You are beautiful in the little details and in the person you are.</p></article>
+        <article class="love-item"><div class="num">06 / YOUR MIND</div><h3>The way you think</h3><p>Your ideas, opinions, and the way you see life inspire me.</p></article>
+        <article class="love-item"><div class="num">07 / YOUR ENERGY</div><h3>Your special energy</h3><p>You bring something to a room that nobody else can replace.</p></article>
+        <article class="love-item"><div class="num">08 / YOUR DREAMS</div><h3>Your dreams</h3><p>I love seeing you grow, aim high, and work toward what matters.</p></article>
+        <article class="love-item"><div class="num">09 / OUR MOMENTS</div><h3>The memories we make</h3><p>Even simple moments become meaningful when I share them with you.</p></article>
+        <article class="love-item"><div class="num">10 / JUST YOU</div><h3>Simply being you</h3><p>You do not have to be anyone else. You are already someone special to me.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" style="background:#fff8f5">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Two years, countless memories</div>
+        <h2>Our little timeline</h2>
+        <p>Two years of learning, growing, laughing, and choosing each other.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="moment">
+          <div class="moment-card">
+            <h3>Chapter 1 · The beginning</h3>
+            <p>Somehow, two paths crossed — and a new story began. I am grateful our story started.</p>
+          </div>
+        </div>
+
+        <div class="moment">
+          <div class="moment-card">
+            <h3>Chapter 2 · Getting closer</h3>
+            <p>Every conversation, laugh, and little discovery gave me another reason to appreciate you.</p>
+          </div>
+        </div>
+
+        <div class="moment">
+          <div class="moment-card">
+            <h3>Chapter 3 · Growing together</h3>
+            <p>We have shared moments that taught us, strengthened us, and became memories I treasure.</p>
+          </div>
+        </div>
+
+        <div class="moment">
+          <div class="moment-card">
+            <h3>Chapter 4 · Two years and still writing</h3>
+            <p>This is not the end of our story. There are more places to go, memories to make, and beautiful chapters still ahead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="memories">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">A few moments of my sweetheart</div>
+        <h2>Your photo gallery</h2>
+        <p>Three photos, one very special person.</p>
+      </div>
+
+      <div class="gallery">
+        <img src="rusina-1.jpg" alt="Sweetheart in a pink outfit">
+        <img src="rusina-2.jpg" alt="Sweetheart outdoors in a rust-coloured dress">
+        <img src="rusina-3.jpg" alt="Sweetheart in a floral outfit">
+      </div>
+    </div>
+  </section>
+
+  <section id="quotes" style="background:#fff0f4">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Little reminders for my favourite person</div>
+        <h2>Words from my heart</h2>
+        <p>Because sometimes a few words can say what the heart feels.</p>
+      </div>
+
+      <div class="love-grid">
+        <article class="love-item">
+          <div class="num">♡ A LITTLE PROMISE</div>
+          <h3>“In every version of tomorrow, I hope I get to keep choosing you.”</h3>
+          <p>My love, I want to keep making beautiful memories with you.</p>
+        </article>
+
+        <article class="love-item">
+          <div class="num">♡ MY FAVOURITE PLACE</div>
+          <h3>“Home is not always a place; sometimes it is the person who makes your heart feel at peace.”</h3>
+          <p>Sweetheart, being with you feels like home.</p>
+        </article>
+
+        <article class="love-item">
+          <div class="num">♡ EVERY LITTLE THING</div>
+          <h3>“I fall for you in the big moments, and all over again in the smallest ones.”</h3>
+          <p>Bae, even the simplest times with you feel special.</p>
+        </article>
+
+        <article class="love-item">
+          <div class="num">♡ STILL YOU</div>
+          <h3>“If I had to write my favourite story, I would keep finding my way back to you.”</h3>
+          <p>My love, our story is one I am grateful to keep writing.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff8f5">
+    <div class="wrap">
+      <div class="letter">
+        <div class="eyebrow">A letter from me to you</div>
+        <h2>Dear Sweetheart,</h2>
+        <p>Happy birthday, my love. I hope this new year of your life brings you peace, happiness, good health, exciting opportunities, and everything your heart has been hoping for.</p>
+        <p>Thank you for being you. Thank you for the memories we have made over these two years. I may be a Computer Science student, but no code could ever fully explain how much you mean to me. So I hope this small gift helps show a little of what my heart already knows.</p>
+        <p>May you never forget how special you are. Keep shining, keep smiling, and keep being the wonderful person you are.</p>
+        <div class="signature">With all my love, ❤️</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="surprise" id="surprise">
+    <div class="surprise-box">
+      <div class="eyebrow">One last thing…</div>
+      <h2>Ready for your surprise?</h2>
+      <p style="font:1rem/1.7 Arial,sans-serif;color:#765b66">
+        Tap the button. I saved a little birthday magic just for you.
+      </p>
+      <button class="btn" id="surprise-btn">Open your surprise ✨</button>
+      <div class="surprise-message" id="surprise-message">
+        🎂 Happy Birthday, Bae! 🎂<br><br>
+        You are my favourite notification, my sweetest thought, and a person I am grateful to have in my life. May your day be filled with joy, softness, laughter, and all the love you deserve.
+      </div>
+
+      <div class="music-panel">
+        <button class="btn" id="music-toggle-bottom" type="button">❤️ Play our song ❤️</button>
+        <span id="music-status-bottom">Made with love, just for you.</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>Made with love, a little code, and a lot of heart · For my love ♡</footer>
+
+  <script>
+    const birthday = new Date(2026, 10, 4, 0, 0, 0);
+    const pad = n => String(n).padStart(2, '0');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = birthday - now;
+
+      if (diff <= 0) {
+        ['days', 'hours', 'minutes', 'seconds'].forEach(id => {
+          document.getElementById(id).textContent = '00';
+        });
+        document.getElementById('count-note').textContent = 'Your birthday date, 4 November 2026, has arrived. Every day is worth celebrating you. ❤️';
+        return;
+      }
+
+      document.getElementById('days').textContent = Math.floor(diff / 86400000);
+      document.getElementById('hours').textContent = pad(Math.floor(diff / 3600000) % 24);
+      document.getElementById('minutes').textContent = pad(Math.floor(diff / 60000) % 60);
+      document.getElementById('seconds').textContent = pad(Math.floor(diff / 1000) % 60);
+      document.getElementById('count-note').textContent = 'Until 4 November 2026 — your special day.';
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const hearts = document.getElementById('hearts');
+
+    function celebrate() {
+      for (let i = 0; i < 55; i++) {
+        const h = document.createElement('span');
+        h.className = 'heart';
+        h.textContent = ['♥', '♡', '✦', '❤'][Math.floor(Math.random() * 4)];
+        h.style.left = Math.random() * 100 + '%';
+        h.style.fontSize = (16 + Math.random() * 25) + 'px';
+        h.style.animationDuration = (3 + Math.random() * 3) + 's';
+        h.style.animationDelay = (Math.random() * .8) + 's';
+        hearts.appendChild(h);
+        setTimeout(() => h.remove(), 7000);
+      }
+    }
+
+    document.getElementById('surprise-btn').addEventListener('click', () => {
+      document.getElementById('surprise-message').classList.add('show');
+      celebrate();
+    });
+
+    const player = document.getElementById("backgroundmusic");
+    const toggle = document.getElementById("music-toggle");
+    const bottomToggle = document.getElementById("music-toggle-bottom");
+    const status = document.getElementById("music-status");
+    const bottomStatus = document.getElementById("music-status-bottom");
+
+    async function toggleMusic() {
+      try {
+        if (player.paused) {
+          await player.play();
+          toggle.textContent = "⏸ Pause our song";
+          bottomToggle.textContent = "⏸ Pause our song";
+          status.textContent = "Playing our special song ❤️";
+          bottomStatus.textContent = "Playing our special song ❤️";
+        } else {
+          player.pause();
+          toggle.textContent = "❤️ Tap here to play our song ❤️";
+          bottomToggle.textContent = "❤️ Play our song ❤️";
+          status.textContent = "Song paused.";
+          bottomStatus.textContent = "Song paused.";
+        }
+      } catch (error) {
+        status.textContent = "Unable to play. Please check that our song.mp3 is in the repository.";
+        bottomStatus.textContent = "Unable to play. Check the music file.";
+        console.error("Music playback error:", error);
+      }
+    }
+
+    toggle.addEventListener("click", toggleMusic);
+    bottomToggle.addEventListener("click", toggleMusic);
+
+    player.addEventListener("ended", () => {
+      toggle.textContent = "❤️ Tap here to play our song ❤️";
+      bottomToggle.textContent = "❤️ Play our song ❤️";
+    });
+  </script>
+</body>
+</html>
